@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="display-4">Delete Owner</h1>
+    {% if not form.owner_id.choices %}
+        <p>Sorry, we do not have any owner in our database.</p>
+    {% else %}
+        <form method="POST">
+            {{form.hidden_tag()}}
+            {{form.owner_id.label}} {{form.owner_id()}}
+            {{form.submit()}}
+        </form>
+    {% endif %}
+</div>
+
+{% endblock %}

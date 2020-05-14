@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="display-4">Check our puppies below</h1>
+    <br>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Puppy</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for puppy in puppies %}
+            <tr>
+                <th scope="row">{{puppy.id}}</th>
+                <td>{{puppy}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="display-4">New Owner</h1>
+    {% if form.puppy_id.choices.empty %}
+        <p>Sorry, we do not have any puppy available at the moment.</p>
+    {% else %}
+        <p>Please add your name below and select the dog you want to adopt:</p>
+        <br>
+        <form method="POST">
+            {{form.hidden_tag()}}
+            {{form.name.label}} {{form.name()}}
+            <br>
+            {{form.puppy_id.label}} {{form.puppy_id()}}
+            <br>
+            {{form.submit()}}
+        </form>
+    {% endif %}
+</div>
+
+{% endblock %}
